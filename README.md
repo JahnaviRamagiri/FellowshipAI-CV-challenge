@@ -96,6 +96,13 @@ During the classification task, it is crucial to consider class imbalance and ov
 ## RESNET50 : RESNET 50 architecture pretrained on IMAGENET is used for this experiment. Last 2 layers are Trainable and the other layers are freezed.
 ## Experiment 1
 ### Model
+
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/8d4da4b7-95d4-4e7c-ac96-fc58ea90b3ea)
+
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/f2165685-bc74-4fff-856a-f9b82aebc724)
+
+
+
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/d83b677c-b338-4b6e-9323-072afedbebce)
 
 
@@ -104,6 +111,11 @@ During the classification task, it is crucial to consider class imbalance and ov
 
 
 ## Experiment 2
+
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/d240d5fc-5ba6-4109-83d1-f42ec6938fef)
+
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/ea73a238-598d-483b-82c0-46e8481bae9a)
+
 
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/275e224c-8ea8-4ecd-9fd6-1b2b04b20edb)
 
