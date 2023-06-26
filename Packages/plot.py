@@ -5,15 +5,16 @@ import matplotlib.pyplot as plt
 import torchvision
 from torchvision import transforms
 import os
-from PIL import Image
 import cv2
 from torchvision.datasets import ImageFolder
 from torchvision.utils import save_image
 import matplotlib.pyplot as plt
-
+from Packages.constants import *
 from Packages.gradCAM import GradCAM
+from PIL import Image
 
-classes = [f"{i}" for i in range(102)] #TODO : Make it dataset specific
+
+classes = CLASSES
 
 pred_list= []
 true_list = []
@@ -85,7 +86,7 @@ def mis(model, device, test_loader, nimage = 64):
     plt.figure(figsize=(16,16))
 
     for index in range(0, nimage):
-        plt.subplot(int(np.sqrt(nimage)), int(np.sqrt(nimage)), index+1)
+        plt.subplot(int(2*np.sqrt(nimage)), int(2*np.sqrt(nimage)), 2*index+1)
         plt.xticks([])
         plt.yticks([])
         x = inv_norm(img[index])      # unnormalize
@@ -99,12 +100,24 @@ def mis(model, device, test_loader, nimage = 64):
         mis_img.save(path)
         #########
 
+        # Get actual Image of Predicted class
+        pred_img_id = class_image_dict[classes[plab[index,0]]]
+        pred_image_path = f"/content/drive/MyDrive/Fellowship AI/S11_superconvergence/data/flowers-102/jpg/image_{pred_img_id}.jpg" 
+        pred_img = plt.imread(pred_image_path)
+
         plt.imshow(x.squeeze(), cmap='gray_r', interpolation= 'bilinear')
         plt.setp(plt.title(f'Predicted: {classes[plab[index,0]]}'), color= 'red')
         pred_list.append(classes[plab[index,0]])
         plt.setp(plt.xlabel(f'Ground Truth: {classes[tlab[index,0]]}'), color= 'blue')
         true_list.append(classes[tlab[index,0]])
         plt.tight_layout()
+
+        plt.subplot(int(2*np.sqrt(nimage)), int(2*np.sqrt(nimage)), 2*index+2)
+
+        plt.imshow(pred_img, cmap='gray_r', interpolation= 'bilinear')
+        plt.setp(plt.title(f'Actual {classes[plab[index,0]]}'), color= 'green')
+        plt.tight_layout()
+
 
 def _visualize_cam(mask, img, hm_lay=0.5, img_lay=0.5, alpha=1.0):
     """Make heatmap from mask and synthesize GradCAM result image using heatmap and img.
@@ -185,48 +198,56 @@ def gen_cam(model, layer, class_idx= None):
         fp_path_res = f'/content/result_act/result{index+10}_{layer}.png'
         save_image(result, fp=fp_path_res)
 
-def plot_pred_cam(n,l):
-  fig, axes = plt.subplots(n, l+2, figsize=((l+2)*3,n*2.5))
-  fig.suptitle("Grad-CAM of Mis Classified Images with respect to Predicted(wrong) Class", fontsize=20)
+def plot_pred_cam(n,l, n_l):
+  fig, axes = plt.subplots(n, n_l+1, figsize=((n_l+1),n*2))
+  fig.suptitle("Grad-CAM of Mis Classified Images with respect to Predicted(wrong) Class", fontsize=16)
   for index in range(0, n):
       # plt.subplot(n, l+1, index+1)
       plt.xticks([])
       plt.yticks([])
-      axes[index, 0].text(0.5, 0.5, f'Predicted {pred_list[index]} \n Actual: {true_list[index]}', fontsize= 16)
-      axes[index, 0].axis('off')
+      # axes[index, 0].text(0.5, 0.5, f'Pred {pred_list[index]} \n Actual: {true_list[index]}', fontsize= 5)
+      # axes[index, 0].axis('off')
       path = '/content/mis_class/images/mis_' + str(index+10) + '.png'
       img = plt.imread(path)
-      axes[index, 1].imshow(img, interpolation= 'bilinear')
-      axes[index, 1].axis('off')
-      for layer in range(l):
-        path = f'/content/result_pred/result{index+10}_layer{layer+1}.png'
+      axes[index, 0].imshow(img, interpolation= 'bilinear')
+      axes[index,0].set_title(f'Pred: {pred_list[index]} \nActual: {true_list[index]}', fontsize= 8)
+      axes[index, 0].axis('off')
+      lyr = 0
+      for layer in l:
+        path = f'/content/result_pred/result{index+10}_{layer}.png'
         img = plt.imread(path)
-        axes[index, layer+2].imshow(img.squeeze(), cmap='gray_r', interpolation= 'bilinear')
-        axes[index, layer+2].set_title(f'Later: {layer+1}')
-        axes[index, layer+2].axis('off')
+        # lyr = 0
+        axes[index, lyr+1].imshow(img.squeeze(), cmap='gray_r', interpolation= 'bilinear')
+        axes[index, lyr+1].set_title(layer)
+        axes[index, lyr+1].axis('off')
+        lyr += 1
   plt.tight_layout()
   plt.subplots_adjust(top=0.97)
   plt.show()
 
-def plot_act_cam(n,l):
-  fig, axes = plt.subplots(n, l+2, figsize=((l+2)*3,n*2.5))
-  fig.suptitle("Grad-CAM of Mis Classified Images with respect to Actual(correct) Class", fontsize=20)
+def plot_act_cam(n,l, n_l):
+  fig, axes = plt.subplots(n, n_l+1, figsize=((n_l+1),n*2))
+  # fig.suptitle("Grad-CAM of Mis Classified Images with respect to Actual(correct) Class", fontsize=16)
   for index in range(0, n):
       # plt.subplot(n, l+1, index+1)
       plt.xticks([])
       plt.yticks([])
-      axes[index, 0].text(0.5, 0.5, f'Predicted {pred_list[index]} \n Actual: {true_list[index]}', fontsize= 16)
-      axes[index, 0].axis('off')
+      # axes[index, 0].text(0.5, 0.5, f'Predicted {pred_list[index]} \n Actual: {true_list[index]}', fontsize= 5)
+      # axes[index, 0].axis('off')
       path = '/content/mis_class/images/mis_' + str(index+10) + '.png'
       img = plt.imread(path)
-      axes[index, 1].imshow(img, interpolation= 'bilinear')
-      axes[index, 1].axis('off')
-      for layer in range(l):
-        path = f'/content/result_act/result{index+10}_layer{layer+1}.png'
+      axes[index, 0].imshow(img, interpolation= 'bilinear')
+      axes[index,0].set_title(f'Pred: {pred_list[index]} \nActual: {true_list[index]}', fontsize= 8)
+      axes[index, 0].axis('off')
+      lyr = 0
+      for layer in l:
+        path = f'/content/result_act/result{index+10}_{layer}.png'
         img = plt.imread(path)
-        axes[index, layer+2].imshow(img.squeeze(), cmap='gray_r', interpolation= 'bilinear')
-        axes[index, layer+2].set_title(f'Later: {layer+1}')
-        axes[index, layer+2].axis('off')
+        # lyr = 0
+        axes[index, lyr+1].imshow(img.squeeze(), cmap='gray_r', interpolation= 'bilinear')
+        axes[index, lyr+1].set_title(f'{layer}')
+        axes[index, lyr+1].axis('off')
+        lyr += 1
   plt.tight_layout()
   plt.subplots_adjust(top=0.97)
   plt.show()

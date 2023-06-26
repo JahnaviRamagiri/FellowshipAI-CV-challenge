@@ -3,10 +3,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class Test:
-    def __init__(self, model, device, test_loader):
+    def __init__(self, model, device, test_loader, keyword):
         self.model = model
         self.device = device
         self.test_loader = test_loader
+        self.keyword = keyword
 
         self.test_loss = []
         self.test_acc = []
@@ -38,5 +39,5 @@ class Test:
 
         if self.test_acc[-1] > self.max_val:
             self.max_val = self.test_acc[-1]
-            path = '/content/classifier.pt'
+            path = f'/content/drive/MyDrive/Fellowship AI/S11_superconvergence/Classifiers/classifier_{self.keyword}.pt'
             torch.save(self.model.state_dict(), path)

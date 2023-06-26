@@ -2,19 +2,19 @@ from torchvision import datasets
 from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 import numpy as np
+from Packages.constants import *
 
 from Packages.augmentation import *
 
 class FLOWER102DataLoader:
 
-    class_names = [f"{i}" for i in range(0,102)]
-
+    class_names = CLASSES
     def __init__(self, model_transform, batch_size=32, data_dir= './data', shuffle=True, nworkers=4, pin_memory=True):
         self.data_dir = data_dir
 
         self.train_set = datasets.Flowers102(
             self.data_dir,
-            split = 'train',
+            split = 'test', #Trainset size - 6000
             download=True,
             transform=model_transform.build_transforms(train=True)
         )
