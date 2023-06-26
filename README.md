@@ -90,27 +90,31 @@ During the classification task, it is crucial to consider class imbalance and ov
 - **Class Imbalance:** Class imbalance refers to a situation where the number of examples in each class is not evenly distributed. It can lead to biased model predictions, with higher accuracy on the majority class and poor performance on minority classes. Techniques such as oversampling, undersampling, or using class weights can help address the class imbalance.
 
 - **Overfitting:** Overfitting occurs when a model learns to perform well on the training data but fails to generalize to unseen data. Signs of overfitting include high accuracy on the training set but poor performance on the validation or test sets. Regularization techniques, such as dropout and weight decay, can mitigate overfitting.
-## Model
 
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/533e70a3-78a9-4964-ae50-bca06993f074)
+## RESNET50 : RESNET 50 architecture pretrained on IMAGENET is used for this experiment. Last 2 layers are Trainable and the other layers are freezed.
+## Experiment 1
+### Model
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/a6b7e37a-441d-402b-9e45-3ad2ef738a0a)
 
-## Result analysis
-### Experiment 1
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/7644f1db-39ff-4246-b935-195479866bbb)
 
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/c2301034-f3c5-4738-8b66-7a03da7b30c2)
 
-Misclassified Images:
+### Misclassified Images:
+
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/317ed54c-0065-40f8-afc8-f159171ea315)
 
 
 ## Experiment 2
+
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/f0a8bb07-4754-483f-8c65-7c073f0ebf08) 
+
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/2ec0235f-cb21-4c43-a22a-d71d07416328)
 
 
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/9894c3b9-49c5-4bc3-be0f-ef2002bf42e0)
 
-Misclassified Images
+### Misclassified Images
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/7b4d19c3-965e-4749-a1aa-4aa20b2d0b38)
 
 
@@ -118,6 +122,7 @@ Misclassified Images
 Experiment 1
 
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/ac2eca48-3c7e-4c06-95bf-146731ae2300)
+
 Experiment 2
 
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/cdc70db4-faa3-4694-a257-3e48e0b3e395)
