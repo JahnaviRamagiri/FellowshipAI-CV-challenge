@@ -90,20 +90,51 @@ During the classification task, it is crucial to consider class imbalance and ov
 - **Class Imbalance:** Class imbalance refers to a situation where the number of examples in each class is not evenly distributed. It can lead to biased model predictions, with higher accuracy on the majority class and poor performance on minority classes. Techniques such as oversampling, undersampling, or using class weights can help address the class imbalance.
 
 - **Overfitting:** Overfitting occurs when a model learns to perform well on the training data but fails to generalize to unseen data. Signs of overfitting include high accuracy on the training set but poor performance on the validation or test sets. Regularization techniques, such as dropout and weight decay, can mitigate overfitting.
+## Model
+
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/533e70a3-78a9-4964-ae50-bca06993f074)
 
 ## Result analysis
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/7b4d19c3-965e-4749-a1aa-4aa20b2d0b38)
+### Experiment 1
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/c2301034-f3c5-4738-8b66-7a03da7b30c2)
+
+Misclassified Images:
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/317ed54c-0065-40f8-afc8-f159171ea315)
+
+
+## Experiment 2
 
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/9894c3b9-49c5-4bc3-be0f-ef2002bf42e0)
 
+Misclassified Images
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/7b4d19c3-965e-4749-a1aa-4aa20b2d0b38)
+
+
+# Accuracy
+Experiment 1
+
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/ac2eca48-3c7e-4c06-95bf-146731ae2300)
+
+Experiment 2
+
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/cdc70db4-faa3-4694-a257-3e48e0b3e395)
+
+Experiment 2 has a significant decrease in Overfitting when compared to Experiment 1. Accuracy has also increased by 3% to 98.04 from an initial 95%
+
+
+# GRADCAM
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/a438d860-e5d0-46be-bbc0-8ad55b862159)
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/a3ce19fd-6ae5-47fe-9078-08eb6abacf19)
+
+
+
 
 
 ## State-of-the-Art (SOTA)
 The SOTA for the Flowers102 dataset is with Compact Convolutional Transformer at 99.76%. The other SOTA models are displayed below:
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/77a7870a-f05c-411a-a7a7-c11beaa93b4c)
 
-Given the pretrained architecture we have considered in this challenge, the SOTA for a RESNET50 model is 97.9%. Our model has achieved 98.04 % with 24.3 M Trainable Parameters.
+Given the pre-trained architecture we have considered in this challenge, the SOTA for a RESNET50 model is 97.9%. Our model has achieved 98.04 % with 24.3 M Trainable Parameters.
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/f84cbc98-b3d9-4f13-9197-a0f4673830dd)
 
 
@@ -113,7 +144,6 @@ To ensure the absence of bugs and maintain the reliability of the code, the foll
 
 - Implement comprehensive unit tests to verify the correctness of individual components and functions in the code.
 - Split the dataset into training, validation, and test sets and monitor the model's performance on the validation set during training to ensure it's not overfitting.
-- Employ cross-validation techniques to assess the model's performance on multiple splits of the data and evaluate its stability.
 - Compare the model's performance with existing benchmarks or previous results to ensure it falls within a reasonable range.
 
 
