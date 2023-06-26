@@ -91,7 +91,7 @@ During the classification task, it is crucial to consider class imbalance and ov
 
 - **Overfitting:** Overfitting occurs when a model learns to perform well on the training data but fails to generalize to unseen data. Signs of overfitting include high accuracy on the training set but poor performance on the validation or test sets. Regularization techniques, such as dropout and weight decay, can mitigate overfitting.
 
-
+## RESNET50 : RESNET 50 architecture pretrained on IMAGENET is used for this experiment. Last 2 layers are Trainable and the other layers are freezed.
 ## Experiment 1
 ### Model
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/a6b7e37a-441d-402b-9e45-3ad2ef738a0a)
