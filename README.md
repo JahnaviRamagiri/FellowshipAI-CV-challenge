@@ -101,11 +101,14 @@ During the classification task, it is crucial to consider class imbalance and ov
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/c2301034-f3c5-4738-8b66-7a03da7b30c2)
 
 ### Misclassified Images:
+
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/317ed54c-0065-40f8-afc8-f159171ea315)
 
 
 ## Experiment 2
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/f0a8bb07-4754-483f-8c65-7c073f0ebf08)
+
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/f0a8bb07-4754-483f-8c65-7c073f0ebf08) 
+
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/2ec0235f-cb21-4c43-a22a-d71d07416328)
 
 
@@ -119,6 +122,7 @@ During the classification task, it is crucial to consider class imbalance and ov
 Experiment 1
 
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/ac2eca48-3c7e-4c06-95bf-146731ae2300)
+
 Experiment 2
 
 ![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/cdc70db4-faa3-4694-a257-3e48e0b3e395)
