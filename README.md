@@ -33,11 +33,13 @@ Labeling: Each image in the dataset is assigned a unique label indicating the fl
 
 ## Data Visualization
 
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/3541795d-c380-4751-aeb2-0537bb10da32)
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/324adf81-cbf3-4f58-aff4-5fb0b6e30381)
 
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/ccf5a5d6-bd5e-41a1-8170-32b1e5053e9f)
 
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/1682bbb1-9b7d-4ae4-a757-cb2dedf32e2e)
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/d8406420-ed93-4209-b844-88ebb5ea666e)
+
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/31dfab04-899b-4aea-9d8b-997071ce9a41)
+
 
 ## Observations and Potential Challenges
 1.  Class Imbalance: The Flower-102 dataset is known to have imbalanced class distributions, meaning that some flower categories may have a significantly higher number of images compared to others. This imbalance can affect the model's training and performance, as it may be biased towards the majority classes.
@@ -94,56 +96,46 @@ During the classification task, it is crucial to consider class imbalance and ov
 ## RESNET50 : RESNET 50 architecture pretrained on IMAGENET is used for this experiment. Last 2 layers are Trainable and the other layers are freezed.
 ## Experiment 1
 ### Model
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/a6b7e37a-441d-402b-9e45-3ad2ef738a0a)
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/d83b677c-b338-4b6e-9323-072afedbebce)
 
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/7644f1db-39ff-4246-b935-195479866bbb)
-
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/c2301034-f3c5-4738-8b66-7a03da7b30c2)
 
 ### Misclassified Images:
-
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/317ed54c-0065-40f8-afc8-f159171ea315)
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/db1a6cac-00f1-4417-9e6a-8408c693435f)
 
 
 ## Experiment 2
 
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/f0a8bb07-4754-483f-8c65-7c073f0ebf08) 
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/275e224c-8ea8-4ecd-9fd6-1b2b04b20edb)
 
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/2ec0235f-cb21-4c43-a22a-d71d07416328)
-
-
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/9894c3b9-49c5-4bc3-be0f-ef2002bf42e0)
 
 ### Misclassified Images
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/7b4d19c3-965e-4749-a1aa-4aa20b2d0b38)
-
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/12b97362-44f8-4518-8ef6-189989b199c2)
 
 # Accuracy
 Experiment 1
 
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/ac2eca48-3c7e-4c06-95bf-146731ae2300)
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/66e826cc-854e-4298-bbff-22af772dfb13)
 
 Experiment 2
 
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/cdc70db4-faa3-4694-a257-3e48e0b3e395)
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/69525017-d861-4d53-ab4e-608d5ce04f60)
 
 Experiment 2 has a significant decrease in Overfitting when compared to Experiment 1. Accuracy has also increased by 3% to 98.04 from an initial 95%
 
 
 # GRADCAM
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/a438d860-e5d0-46be-bbc0-8ad55b862159)
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/a3ce19fd-6ae5-47fe-9078-08eb6abacf19)
-
-
-
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/da8b1a92-12f4-4498-b958-ea4f0f1c7644)
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/473ed141-dfdc-4241-a7fb-eefdcf6d7797)
 
 
 ## State-of-the-Art (SOTA)
 The SOTA for the Flowers102 dataset is with Compact Convolutional Transformer at 99.76%. The other SOTA models are displayed below:
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/77a7870a-f05c-411a-a7a7-c11beaa93b4c)
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/2f652d5f-cd28-42c7-9060-33ecf0c3a5b8)
+
 
 Given the pre-trained architecture we have considered in this challenge, the SOTA for a RESNET50 model is 97.9%. Our model has achieved 98.04 % with 24.3 M Trainable Parameters.
-![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/f84cbc98-b3d9-4f13-9197-a0f4673830dd)
+![image](https://github.com/JahnaviRamagiri/FellowshipAI-CV-challenge/assets/61361874/f9a73897-df97-4a0b-9ad2-535f54afc4f7)
+
 
 
 ## Bugs in the Code
